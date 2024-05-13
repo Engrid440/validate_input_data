@@ -23,8 +23,8 @@ def handle_form():
         return "身分證號碼第一個應該為英文字母", 400
     
      # Validate ID number (assuming 台灣ID)
-    if not id_number[0].isalpha():
-        return "身分證號碼第一個應該為英文字母", 400
+    if not id_number[1:].isdigit():
+        return "身分證號碼後九碼應該為數字", 400  
 
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
