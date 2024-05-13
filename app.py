@@ -26,6 +26,13 @@ def handle_form():
     if not id_number[1:].isdigit():
         return "身分證號碼後九碼應該為數字", 400  
 
+     # Validate ID number (assuming 台灣ID)
+    first_char_num=ord(id_number[o].upper())-55
+
+     # Validate ID number (assuming 台灣ID)
+    if not id_number[1:].isdigit():
+        return "身分證號碼後九碼應該為數字", 400
+        
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
         return "Invalid name", 400
